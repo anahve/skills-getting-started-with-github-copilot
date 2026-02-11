@@ -173,6 +173,7 @@ footer {
   margin-bottom: 8px;
   font-size: 14px;
   color: #444;
+  position: relative;
 }
 
 .participant-badge {
@@ -187,6 +188,24 @@ footer {
   font-weight: 700;
   font-size: 12px;
   flex: 0 0 30px;
+}
+
+.delete-btn {
+  margin-left: auto;
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-weight: bold;
+  flex: 0 0 auto;
+}
+
+.delete-btn:hover {
+  background-color: #b71c1c;
 }
 
 .no-participants {
