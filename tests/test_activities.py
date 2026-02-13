@@ -33,3 +33,16 @@ def test_get_activities_participants_list(client):
     assert isinstance(chess_participants, list)
     assert "michael@mergington.edu" in chess_participants
     assert "daniel@mergington.edu" in chess_participants
+
+
+def test_manga_maniacs_activity_exists(client):
+    """Test that Manga Maniacs activity is available"""
+    response = client.get("/activities")
+    data = response.json()
+    
+    assert "Manga Maniacs" in data
+    manga = data["Manga Maniacs"]
+    assert manga["description"] == "Explore the fantastic stories of the most interesting characters from Japanese Manga (graphic novels)"
+    assert manga["schedule"] == "Tuesdays at 7pm"
+    assert manga["max_participants"] == 15
+    assert isinstance(manga["participants"], list)
